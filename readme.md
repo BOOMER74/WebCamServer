@@ -11,6 +11,7 @@ Easy web camera server on Python, based on CherryPy and OpenCV. Tested on Raspbe
 
 ##Camera
 
+* **camera.index** - Index of camera (use -1 for first available camera) 
 * **camera.count** - Count of images in downloadable archive
 * **camera.width** - Width of image (camera resolution)
 * **camera.height** - Height of image (camera resolution)

@@ -28,7 +28,7 @@ if __name__ == "__main__":
 	if not os.path.exists(config.camera['folder']):
 		os.makedirs(config.camera['folder'])
 
-	cameraInstance = camera.Camera(config.camera['width'], config.camera['height'])
+	cameraInstance = camera.Camera(config.camera['index'], config.camera['width'], config.camera['height'])
 
 	if config.camera['interval'] > 0:
 		removeOldImages(config.cleaner['interval'], config.camera['folder'], config.cleaner['old'])
@@ -36,9 +36,9 @@ if __name__ == "__main__":
 		storeImageByTimer(cameraInstance, config.camera['interval'], config.camera['folder'])
 
 	cherrypy.config.update({
-	"engine.autoreload.on": False,
-	"server.socket_host": config.server['host'],
-	"server.socket_port": config.server['port']
+		"engine.autoreload.on": False,
+		"server.socket_host": config.server['host'],
+		"server.socket_port": config.server['port']
 	})
 
 	cherrypy.quickstart(server.Server(cameraInstance, config.server['html'], config.camera['folder'], config.camera['count']), "/", config={"/": {}})

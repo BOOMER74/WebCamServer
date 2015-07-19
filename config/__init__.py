@@ -1,22 +1,23 @@
 # -*- coding: utf-8 -*-
 
 cleaner = {
-"interval": 60,
-"old": 24 * 60 * 60
+	"interval": 60,
+	"old": 24 * 60 * 60
 }
 
 camera = {
-"count": 50,
-"width": 640,
-"height": 480,
-"interval": 15,
-"folder": "_images"
+	"index": -1,
+	"count": 50,
+	"width": 640,
+	"height": 480,
+	"interval": 15,
+	"folder": "_images"
 }
 
 server = {
-"host": "0.0.0.0",
-"port": 81,
-"html": """<html>
+	"host": "0.0.0.0",
+	"port": 81,
+	"html": """<html>
 	<head>
 		<meta charset="utf-8">
 		<title>WebCameraServer</title>

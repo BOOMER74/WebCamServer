@@ -5,9 +5,9 @@ import base64
 import cv2
 
 class Camera(object):
-	def __init__(self, width, height):
+	def __init__(self, index, width, height):
 		# noinspection PyArgumentList
-		self.camera = cv2.VideoCapture(-1)
+		self.camera = cv2.VideoCapture(index)
 
 		self.camera.set(3, width)
 		self.camera.set(4, height)
